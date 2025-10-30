@@ -40,10 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function mostrarPosicion(posicion) {
         
+        // --- !! ESTA ES LA LÍNEA NUEVA !! ---
+        // Imprime las coordenadas en la consola del navegador
+        console.log("¡Ubicación obtenida!", posicion.coords);
+        // -------------------------------------
+
         widget.classList.add("unlocked");
         resultadoDiv.innerHTML = ""; 
         
-        // Contenido local inyectado al desbloquearse
         document.getElementById("widget-clima").innerHTML = `<strong>Clima en tu zona:</strong> 18°C, mayormente soleado. Sensación térmica agradable. Previsión: Nubes dispersas mañana.`;
         document.getElementById("widget-trafico").innerHTML = `<strong>Tráfico (9:30 AM):</strong> Congestión moderada en la Av. Doble Vía. Flujo lento en el 2do Anillo. Rutas alternativas: Calle Potosí.`;
         document.getElementById("widget-evento").innerHTML = `<strong>Evento Destacado:</strong> Feria de Arte Urbano "Expresión Cruceña" este fin de semana en el Parque Urbano. ¡Artistas locales en acción!`;
