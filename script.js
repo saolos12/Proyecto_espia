@@ -39,8 +39,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function mostrarPosicion(posicion) {
+        
         widget.classList.add("unlocked");
         resultadoDiv.innerHTML = ""; 
+        
+        document.getElementById("widget-clima").innerHTML = "<strong>Clima en tu zona:</strong> 15°C - Nublado";
+        document.getElementById("widget-trafico").innerHTML = "<strong>Tráfico:</strong> Flujo moderado en el centro. Precaución en Av. Ballivián.";
+        document.getElementById("widget-evento").innerHTML = "<strong>Eventos:</strong> Noche de Museos este viernes. ¡No te lo pierdas!";
     }
 
     function mostrarError(error) {
