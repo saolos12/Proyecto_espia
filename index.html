@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias al Instante</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div id="fecha-hora-vivo">Cargando...</div>
+            <div class="breaking-news">
+                <span>ÚLTIMA HORA</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item">Bolsa de Nueva York cierra al alza...</div>
+            <div class="ticker-item">Alerta climática emitida para la costa este...</div>
+            <div class="ticker-item">Equipo local avanza a la semifinal...</div>
+            <div class="ticker-item">Descubrimiento científico podría revolucionar las baterías...</div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Noticias al Instante</h1>
+            <ul class="nav-links">
+                <li><a href="#">Internacional</a></li>
+                <li><a href="#">Economía</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Tecnología</a></li>
+                <li><a href="#">Ciencia</a></li>
+                <li><a href="#">Opinión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <main class="content-area">
+            
+            <article class="news-article featured">
+                <img src="https://via.placeholder.com/600x300.png?text=Noticia+Principal" alt="Foto de noticia principal">
+                <h2>Innovación Tecnológica: La nueva IA que podría cambiar la medicina</h2>
+                <p><strong>(2h hace)</strong> - Un grupo de científicos ha anunciado un gran avance...</p>
+                <a href="#" class="read-more">Leer más</a>
+            </article>
+            <hr class="section-divider">
+            <div class="article-row">
+                <article class="news-article small-article">
+                    <img src="https://via.placeholder.com/300x150.png?text=Economía" alt="Foto de economía">
+                    <h3>Economía Global: Mercados reaccionan con optimismo</h3>
+                    <p><strong>(4h hace)</strong> - Los mercados bursátiles abrieron al alza...</p>
+                    <a href="#" class="read-more">Leer más</a>
+                </article>
+                <article class="news-article small-article">
+                    <img src="https://via.placeholder.com/300x150.png?text=Deportes" alt="Foto de deportes">
+                    <h3>Deportes: La final del campeonato se jugará este domingo</h3>
+                    <p><strong>(5h hace)</strong> - El equipo local se prepara para el partido...</p>
+                    <a href="#" class="read-more">Leer más</a>
+                </article>
+            </div>
+            <hr class="section-divider">
+            <article class="news-article">
+                <h2>Cultura: Exposición de arte moderno rompe récords</h2>
+                <p><strong>(6h hace)</strong> - La nueva exhibición en el Museo de Arte Contemporáneo...</p>
+                <a href="#" class="read-more">Leer más</a>
+            </article>
+
+        </main>
+        
+        <aside class="sidebar">
+            
+            <div id="widget-local" class="sidebar-widget noticias-locales-box">
+                <h3>Tu Resumen Local</h3>
+                <div class="placeholder-content">
+                    <p>Clima en [Tu Ciudad]: 22°C Soleado</p>
+                    <p>Tráfico: Congestión moderada...</p>
+                    <p>Evento: Festival de comida este fin de semana...</p>
+                </div>
+                <div class="overlay-lock" id="btn-ubicacion">
+                    <span class="icono-lock">🔒</span>
+                    <p>Haz clic para desbloquear las noticias de tu zona</p>
+                </div>
+                <div id="resultado"></div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Lo Más Visto</h3>
+                <ul class="popular-list">
+                    <li><a href="#"><span>1</span>Opinión: ¿Son las redes sociales un peligro?</a></li>
+                    <li><a href="#"><span>2</span>Receta: El pastel de chocolate perfecto</a></li>
+                    <li><a href="#"><span>3</span>Viajes: Los 5 destinos más económicos</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-widget">
+                <h3>Publicidad</h3>
+                <img src="https://via.placeholder.com/300x250.png?text=Anuncio+Falso" alt="Anuncio falso">
+            </div>
+        </aside>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2 class="logo-footer">Noticias al Instante</h2>
+                    <p>El portal de noticias líder en información veraz y al momento. Cubrimos los eventos que definen nuestro mundo.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Equipo Editorial</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos de Uso</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Noticias al Instante. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
